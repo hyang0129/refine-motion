@@ -1,0 +1,9 @@
+{
+  "name": "refine-motion",
+  "short_name": "refine",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d0f",
+  "theme_color": "#7c6af7",
+  "icons": []
+}
