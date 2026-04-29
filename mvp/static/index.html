@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>refine-motion · mock v1</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>refine-motion <span class="tag">mock v1</span></h1>
+      <p class="sub">walking-meeting on the desk. speak intent → agent refines → GitHub issue.</p>
+    </header>
+
+    <section id="setup" class="card">
+      <h2>Target</h2>
+      <form id="start-form">
+        <label>
+          <span>owner</span>
+          <input id="owner" type="text" placeholder="hyang0129" required />
+        </label>
+        <label>
+          <span>repo</span>
+          <input id="repo" type="text" placeholder="refine-motion" required />
+        </label>
+        <label>
+          <span>issue # <em>(optional — refine existing)</em></span>
+          <input id="issue-number" type="number" placeholder="leave blank to create new" />
+        </label>
+        <button type="submit">Start session</button>
+      </form>
+    </section>
+
+    <section id="session" class="card hidden">
+      <div class="row between">
+        <h2>Session</h2>
+        <span id="status-pill" class="pill">idle</span>
+      </div>
+
+      <div id="transcript" class="transcript"></div>
+
+      <div class="row controls">
+        <button id="ptt" class="ptt" disabled>
+          <span class="dot"></span>
+          <span class="ptt-label">hold to speak</span>
+        </button>
+        <button id="text-fallback-btn" class="text-fallback">type instead</button>
+      </div>
+
+      <form id="text-form" class="hidden">
+        <input id="text-input" type="text" placeholder="type your turn…" />
+        <button type="submit">send</button>
+      </form>
+
+      <div id="contract" class="contract hidden">
+        <h3>Contract <small>(read back to you)</small></h3>
+        <p class="hint">say "yes" / "looks good" / "ship it" to confirm — or speak a correction.</p>
+        <div id="contract-body"></div>
+      </div>
+
+      <div id="result" class="result hidden">
+        <h3>Submitted</h3>
+        <a id="issue-link" target="_blank" rel="noopener noreferrer"></a>
+      </div>
+    </section>
+
+    <footer>
+      <small>
+        Constitutional compliance: voice → agent → issue. No code, no PRs, no commits.
+      </small>
+    </footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
